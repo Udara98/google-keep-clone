@@ -2,6 +2,8 @@ import * as React from "react";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 import styled from "@emotion/styled";
 import axios from "axios";
+import AirlineSeatReclineNormalIcon from '@mui/icons-material/AirlineSeatReclineNormal';
+import IconButton from '@mui/material/IconButton';
 
 const AutoSizeTextArea = styled(TextareaAutosize)({
   display: "block",
@@ -10,9 +12,7 @@ const AutoSizeTextArea = styled(TextareaAutosize)({
   boxSizing: "border-box",
   fontFamily: "Roboto",
   opacity: "1",
-  boxSizing: "border-box",
   margin: "auto",
-  borderRadius: "8px",
   position: "relative",
   top: "100px",
   width: "600px",

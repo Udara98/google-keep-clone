@@ -1,13 +1,15 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 
-export const NoteCard = ({ note }) => {
+const NoteCard = React.memo(({ note }) => {
   return (
     <Card
       sx={{
         borderColor: "#e0e0e0",
         border: "1px  ",
         fontFamily: "Roboto",
+        minHeight: "150px",
+        maxHeight: "400px",
         textAlign: "left",
         borderRadius: "8px",
         border: "1px solid #ccc",
@@ -19,8 +21,6 @@ export const NoteCard = ({ note }) => {
 
         "&:focus": {
           outline: "none",
-          // boxShadow:
-          //   "0px 3px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149)",
         },
       }}
     >
@@ -31,4 +31,6 @@ export const NoteCard = ({ note }) => {
       </CardContent>
     </Card>
   );
-};
+});
+
+export default NoteCard;
