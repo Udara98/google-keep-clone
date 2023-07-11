@@ -2,7 +2,6 @@ import React from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Card from "@mui/material/Card";
 import { styled, useTheme } from "@mui/material/styles";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Input from "@mui/material/Input";
 import CloseIcon from "@mui/icons-material/Close";

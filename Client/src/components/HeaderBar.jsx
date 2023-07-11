@@ -1,21 +1,14 @@
 import * as React from "react";
-import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
+import { styled} from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import TextField from "@mui/material/TextField";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
 import SearchBar from "./SearchBar/SearchBar";
 
 
 
-const drawerWidth = 240;
 const Header = styled(AppBar)`
   z-index: 1201;
   background-color: #fff;
