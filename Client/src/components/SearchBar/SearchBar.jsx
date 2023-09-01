@@ -1,11 +1,10 @@
 import React from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Card from "@mui/material/Card";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled} from "@mui/material/styles";
 import CardContent from "@mui/material/CardContent";
 import Input from "@mui/material/Input";
 import CloseIcon from "@mui/icons-material/Close";
-import { Box } from "@mui/material";
 
 const StyledCard = styled(Card)({
   
@@ -19,8 +18,9 @@ const StyledCard = styled(Card)({
   width: "615px",
   backgroundColor: "#f1f3f4",
   height: "45px",
-  position: "relative",
   boxShadow: "none",
+
+
 });
 
 const StyledInput = styled(Input)({
@@ -37,9 +37,12 @@ const StyledInput = styled(Input)({
   },
   marginLeft: "20px",
   textAlign: "center",
+  "@media (max-width: 800px)": {
+    maxWidth:"40vw"
+  }
 });
 
-const SearchBar = ({ placeholder, onChange }) => {
+const SearchBar = ({onChange }) => {
   return (
     <StyledCard>
       <CardContent
@@ -51,7 +54,11 @@ const SearchBar = ({ placeholder, onChange }) => {
           width: "100%",
           border: "none",
           boxSizing: "border-box",
-          marginTop:"6px"
+          marginTop:"6px",
+          "@media (max-width: 800px)": {
+            flexDirection: "row-reverse"
+          }
+          
         }}
       >
         <SearchOutlinedIcon sx={{ color: "#5f6368"}} />
@@ -62,7 +69,9 @@ const SearchBar = ({ placeholder, onChange }) => {
         }}
         />
         <CloseIcon
-          sx={{color: "#5f6368", marginLeft: "auto" }}
+          sx={{color: "#5f6368", marginLeft: "auto",  "@media (max-width: 800px)": {
+            display: "none",
+          }, }}
         />
       </CardContent>
     </StyledCard>

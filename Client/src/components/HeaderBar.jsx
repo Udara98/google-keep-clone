@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchBar from "./SearchBar/SearchBar";
-
+import logo from "./logo/logo.png";
 
 
 const Header = styled(AppBar)`
@@ -24,8 +24,8 @@ const Heading = styled(Typography)`
 `;
 
 const HeaderBar = ({ open, handleDrawer }) => {
-  const logo =
-    "https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png";
+
+  <logo/>
   return (
     <Header position="fixed" open={open}>
       <Toolbar>
@@ -42,7 +42,7 @@ const HeaderBar = ({ open, handleDrawer }) => {
         <Typography variant = "h2" >
           <Heading> Keep</Heading>
         </Typography>
-        <SearchBar />
+        <SearchBar/>
       </Toolbar>
     </Header>
   );

@@ -11,7 +11,6 @@ import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import NotificationAddOutlinedIcon from "@mui/icons-material/NotificationAddOutlined";
-import ListItemButton from "@mui/material/ListItemButton";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
@@ -19,9 +18,6 @@ import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import UndoOutlinedIcon from "@mui/icons-material/UndoOutlined";
 import RedoOutlinedIcon from "@mui/icons-material/RedoOutlined";
-import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
-import Paper from "@mui/material/Paper";
-import NoteCard from "./NoteTiles/NoteCard";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
@@ -39,7 +35,10 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-20%)",
-  width: "40vw",
+  width: "45vw",
+  "@media(max-width: 800px)": {
+    width: "100vw",
+  },
   bgcolor: "background.paper",
   boxShadow: 24,
   p: 0,

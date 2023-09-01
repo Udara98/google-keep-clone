@@ -28,7 +28,7 @@ exports.addNote = async (req, res, next) => {
   }
 };
 
-exports.deleteNote = async (req, res, next) => {
+exports.deleteNote = async (req, res) => {
   const { noteId } = req.params;
   console.log(noteId);
 

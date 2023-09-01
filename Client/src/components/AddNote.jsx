@@ -1,15 +1,12 @@
 import * as React from "react";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import axios from "axios";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/joy/Stack";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import NotificationAddOutlinedIcon from "@mui/icons-material/NotificationAddOutlined";
-import ListItemButton from "@mui/material/ListItemButton";
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
@@ -17,15 +14,13 @@ import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import UndoOutlinedIcon from "@mui/icons-material/UndoOutlined";
 import RedoOutlinedIcon from "@mui/icons-material/RedoOutlined";
-import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
-import Paper from "@mui/material/Paper";
-import { Typography } from "@mui/material";
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
+import { Grid } from "@mui/material";
 
 const StyledCard = styled(Card)({
   fontFamily: "Roboto",
   backgroundColor: "#ffff",
   boxShadow: "none",
-
 });
 
 const StyledTextFields = styled(TextField)({
@@ -42,7 +37,7 @@ const StyledTextFields = styled(TextField)({
     padding: "0px",
   },
   height: "auto",
-  maxHeight:"50vh",
+  maxHeight: "50vh",
   "&:focus": {
     outline: "none",
     boxShadow: "none",
@@ -56,22 +51,22 @@ const StyledTextFields = styled(TextField)({
   border: "none",
   "& fieldset": { border: "none" },
   maxHeight: "50vh",
-            overflowY: "auto",
-            "&::-webkit-scrollbar": {
-              width: "9px",
-              visibility: "hidden",
-            },
-            "&:hover::-webkit-scrollbar": {
-              visibility: "visible",
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "rgba(0,0,0,.2)",
-              borderRadius: "2px",
-            },
-            "&::-webkit-scrollbar-thumb:hover": {
-              backgroundColor: "#555",
-            },               
-  });
+  overflowY: "auto",
+  "&::-webkit-scrollbar": {
+    width: "9px",
+    visibility: "hidden",
+  },
+  "&:hover::-webkit-scrollbar": {
+    visibility: "visible",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "rgba(0,0,0,.2)",
+    borderRadius: "2px",
+  },
+  "&::-webkit-scrollbar-thumb:hover": {
+    backgroundColor: "#555",
+  },
+});
 
 const AddNoteForm = ({
   title,
@@ -80,13 +75,12 @@ const AddNoteForm = ({
   handleInputChangeNote,
   handleSubmit,
   handleBlur,
-
 }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <StyledTextFields
-        tyle={{ flex: 1 }}
+          tyle={{ flex: 1 }}
           id="outlined-textarea"
           value={title}
           onChange={handleInputChangeTitle}
@@ -95,8 +89,8 @@ const AddNoteForm = ({
           multiline
         />
 
-        <IconButton fontSize="small" style={{marginLeft:"auto"}}>
-          <LocalOfferOutlinedIcon />
+        <IconButton fontSize="small" style={{ marginLeft: "auto" }}>
+          <PushPinOutlinedIcon />
         </IconButton>
       </div>
       <StyledTextFields
@@ -147,6 +141,11 @@ const AddNote = () => {
     <Stack
       sx={{
         width: "40vw",
+        "@media (max-width: 900px)": {
+          width: "75vw",
+          marginLeft: "17vw",
+          paddingRight: "1rem",
+        },
         margin: "auto",
         position: "relative",
         top: "100px",
@@ -154,7 +153,6 @@ const AddNote = () => {
         borderRadius: "10px",
         boxShadow:
           "0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149)",
-  
       }}
     >
       <AddNoteForm
@@ -172,9 +170,6 @@ const AddNote = () => {
             alignItems: "center",
             justifyContent: "left",
             boxSizing: "border-box",
-            padding: "0px",
-            ColumnGap: "1px",
-            margin: "5px",
             padding: "0",
             paddingBottom: "0",
             "&:last-child": {
@@ -182,36 +177,42 @@ const AddNote = () => {
             },
           }}
         >
-          <IconButton fontSize="small">
-            <NotificationAddOutlinedIcon />
-          </IconButton>
-          <IconButton fontSize="small">
-            <PersonAddAltOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <ColorLensOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <ImageOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <ArchiveOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <MoreVertOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <UndoOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton fontSize="small">
-            <RedoOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton
-            fontSize="small"
-            sx={{ marginLeft: "auto", marginRight: "2vw" }}
+          <Grid
+            container
+            sx={{
+              "@media (max-width: 500px)": {
+                direction: "row",
+              },
+            }}
           >
-            close
-          </IconButton>
+            <Grid container xs={12}>
+              <IconButton fontSize="0.5">
+                <NotificationAddOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <PersonAddAltOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <ColorLensOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <ImageOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <ArchiveOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <MoreVertOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <UndoOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton fontSize="small">
+                <RedoOutlinedIcon sx={{ fontSize: 18 }} />
+              </IconButton>
+              <IconButton sx={{ marginLeft: "auto",fontSize:"18px" }}>close</IconButton>
+            </Grid>
+          </Grid>
         </CardContent>
       </StyledCard>
     </Stack>
